@@ -25,12 +25,11 @@ To handle a command we need a class to represent the command. Say we have a regi
 ```kotlin
 class PersonInfoCommand : Command("person_info") { //person_info is the command name
 
-    lateinit var id: Int
-        private set
-    lateinit var name: String
-        private set
-    lateinit var age: Int
-        private set
+    //val is fine; Gson alters backing fields by reflection
+    //create your own default values (or use lateinit)
+    val id: Int = 0
+    val name: String = ""
+    val age: Int = 0
 
 }
 ```
