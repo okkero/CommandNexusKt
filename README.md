@@ -35,14 +35,14 @@ class PersonInfoCommand : Command("person_info") { //person_info is the command 
 ```
 Now we need to tell the nexus we want to handle all incoming commands with the name "person_info":
 ```kotlin
-nexus.handleCommand<PersonInfoCommand>("person_info", { sender, command -> 
+nexus.handleCommand<PersonInfoCommand>("person_info", { sender, command ->
     //Sender is of type MyClient
     //Command is of type PersonInfoCommand
     //We can access its getters:
-    println(command.getId());
-    println(command.getName());
-    println(command.getAge());
-});
+    println(command.id)
+    println(command.name)
+    println(command.age) 
+})
 ```
 If the nexus' onCommand was called with the following JSON input:
 ```json
@@ -65,10 +65,11 @@ To send this command to a client it needs to be serialized (into JSON). The Comm
 ```kotlin
 val client = <some client of type MyClient>
 try {
-    nexus.sendCommand(client, RequestPersonInfoCommand(2));
+    nexus.sendCommand(client, RequestPersonInfoCommand(2))
 } catch (e: IOException) {
-    //Any IOException thrown by the client when sending the command can be handled here (or not, because this is kotlin)
-    e.printStackTrace();
+    //Any IOException thrown by the client when sending the command can be handled here
+    //(or not, because this is Kotlin)
+    e.printStackTrace()
 }
 ```
 This will generate the following JSON and send it to the client:
