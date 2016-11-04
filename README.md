@@ -65,7 +65,7 @@ To send this command to a client it needs to be serialized (into JSON). The Comm
 ```kotlin
 val client = <some client of type MyClient>
 try {
-    nexus.sendCommand(client, RequestPersonInfoCommand(2))
+    nexus.sendCommand(RequestPersonInfoCommand(2), client)
 } catch (e: IOException) {
     //Any IOException thrown by the client when sending the command can be handled here
     //(or not, because this is Kotlin)
