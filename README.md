@@ -17,7 +17,7 @@ The clients should call the nexus' onCommand method whenever they receive a comm
 
 The CommandNexus itself can now be instantiated using this client class:
 ```kotlin
-val nexus = CommandNexus(MyClient::sendMessage, { //<code to retrieve a Sequence of all clients> })
+val nexus = CommandNexus(MyClient::sendMessage, { /*<code to retrieve a Sequence of all clients>*/ })
 ```
 
 ## Handling commands
