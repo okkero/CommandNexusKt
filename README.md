@@ -27,9 +27,9 @@ class PersonInfoCommand : Command("person_info") { //person_info is the command 
 
     //val is fine; Gson alters backing fields by reflection
     //create your own default values (or use lateinit)
-    val id: Int = 0
-    val name: String = ""
-    val age: Int = 0
+    val id = 0
+    val name = ""
+    val age = 0
 
 }
 ```
